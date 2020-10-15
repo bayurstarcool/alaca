@@ -3,33 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="@color/grey_5"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary">
+        android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:contentInsetLeft="0dp"
-            app:contentInsetStart="0dp"
-            app:theme="@style/ThemeOverlay.AppCompat.Dark"
-            app:title="Alaca"
-            app:titleTextColor="@color/indigo_500">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fontFamily="sans-serif-black"
-                android:gravity="center"
-                android:text="Alaca"
-                android:textColor="@android:color/white"
-                android:textSize="24sp" />
-        </androidx.appcompat.widget.Toolbar>
+        <include layout="@layout/toolbar" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -58,7 +39,7 @@
                 android:layout_margin="@dimen/spacing_middle"
                 android:fontFamily="sans-serif-light"
                 android:gravity="center_horizontal"
-                android:text="Aplikasi hitung alaca"
+                android:text="Pilih Bangun Ruang"
                 android:textAlignment="center"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                 android:textColor="@color/grey_90"
@@ -74,7 +55,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/spacing_small"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/grey_5"
+                    app:cardBackgroundColor="@android:color/white"
                     app:cardCornerRadius="3dp"
                     app:cardElevation="0dp">
 
@@ -93,17 +74,17 @@
                             android:padding="@dimen/spacing_large">
 
                             <ImageView
-                                android:layout_width="35dp"
-                                android:layout_height="35dp"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
                                 android:layout_marginTop="@dimen/spacing_smlarge"
                                 android:layout_marginBottom="@dimen/spacing_smlarge"
-                                app:srcCompat="@drawable/badge_reward" />
+                                app:srcCompat="@drawable/bola" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_horizontal"
-                                android:text="Berat Badan"
+                                android:text="Bola"
                                 android:textAlignment="center"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                                 android:textColor="@color/grey_90" />
@@ -119,7 +100,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/spacing_small"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/grey_5"
+                    app:cardBackgroundColor="@android:color/white"
                     app:cardCornerRadius="3dp"
                     app:cardElevation="0dp">
 
@@ -137,17 +118,17 @@
                             android:padding="@dimen/spacing_large">
 
                             <ImageView
-                                android:layout_width="35dp"
-                                android:layout_height="35dp"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
                                 android:layout_marginTop="@dimen/spacing_smlarge"
                                 android:layout_marginBottom="@dimen/spacing_smlarge"
-                                app:srcCompat="@drawable/badge_reward" />
+                                app:srcCompat="@drawable/balok" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_horizontal"
-                                android:text="Hitung Nilai"
+                                android:text="Balok"
                                 android:textAlignment="center"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                                 android:textColor="@color/grey_90" />
@@ -163,7 +144,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/spacing_small"
                     android:layout_weight="1"
-                    app:cardBackgroundColor="@color/grey_5"
+                    app:cardBackgroundColor="@android:color/white"
                     app:cardCornerRadius="3dp"
                     app:cardElevation="0dp">
 
@@ -181,17 +162,17 @@
                             android:padding="@dimen/spacing_large">
 
                             <ImageView
-                                android:layout_width="35dp"
-                                android:layout_height="35dp"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
                                 android:layout_marginTop="@dimen/spacing_smlarge"
                                 android:layout_marginBottom="@dimen/spacing_smlarge"
-                                app:srcCompat="@drawable/badge_reward" />
+                                app:srcCompat="@drawable/kubus" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_horizontal"
-                                android:text="Bangun Datar"
+                                android:text="Kubus"
                                 android:textAlignment="center"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                                 android:textColor="@color/grey_90" />
@@ -219,7 +200,6 @@
                     app:cardElevation="0dp">
 
                     <com.balysv.materialripple.MaterialRippleLayout
-                        android:id="@+id/ruang"
                         style="@style/RippleStyleBlack"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">

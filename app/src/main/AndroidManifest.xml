@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".BBIActivity"/>
+        <activity android:name=".TemperaturesActivity"/>
+        <activity android:name=".RuangActivity"/>
     </application>
 
 </manifest>
