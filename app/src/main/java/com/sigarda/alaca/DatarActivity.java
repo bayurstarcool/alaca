@@ -1,4 +1,4 @@
 package com.sigarda.alaca;
 
-public class BalokActivity {
+public class DatarActivity {
 }
