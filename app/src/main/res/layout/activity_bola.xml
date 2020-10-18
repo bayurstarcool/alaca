@@ -16,7 +16,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/grey_5"
+        android:background="@android:color/white"
         android:clipToPadding="false"
         android:padding="@dimen/spacing_mlarge"
         android:scrollbars="none"
@@ -31,6 +31,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
@@ -97,7 +98,7 @@
                                     android:id="@+id/textView4"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="Keliling"
+                                    android:text="Luas Permukaan"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                                     android:textColor="@color/grey_90" />
 
@@ -105,7 +106,7 @@
                                     android:id="@+id/textView3"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text="4/3 x 22/7 x 162"
+                                    android:text="(4 × π × r²)"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                                     android:textColor="@color/grey_90" />
 
@@ -123,60 +124,15 @@
                 android:layout_height="wrap_content">
 
                 <AutoCompleteTextView
-                    android:id="@+id/name"
+                    android:id="@+id/jari"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nama Anda"
+                    android:hint="Masukkan Jari-jari(cm)"
+                    android:inputType="number"
                     android:maxLines="1"
                     android:singleLine="true" />
 
             </com.google.android.material.textfield.TextInputLayout>
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="@dimen/spacing_mlarge" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/height"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Tinggi Badan(cm)"
-                        android:inputType="number"
-                        android:maxLines="1"
-                        android:singleLine="true" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <View
-                    android:layout_width="@dimen/spacing_large"
-                    android:layout_height="0dp" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/weight"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Berat Badan(Kg)"
-                        android:inputType="number"
-                        android:maxLines="1"
-                        android:singleLine="true" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-            </LinearLayout>
 
             <View
                 android:layout_width="0dp"
@@ -216,16 +172,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="left"
-                        android:text="Hasil perhitungan : "
+                        android:text="Volume :"
                         android:textStyle="bold" />
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/hasil_txt"
+                    android:id="@+id/volume"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_small"
-                    android:text="Halo Wahyu Prasetyo, selamat berat badan Anda IDEAL" />
+                    android:text="0" />
 
                 <TextView
                     android:id="@+id/textView5"
@@ -233,15 +189,15 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_smlarge"
                     android:gravity="left"
-                    android:text="Saran Ahli :"
+                    android:text="Luas Permukaan :"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/saran_txt"
+                    android:id="@+id/luas_permukaan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_small"
-                    android:text="Tetap pertahankan gaya hidup Anda" />
+                    android:text="0" />
             </LinearLayout>
 
         </LinearLayout>

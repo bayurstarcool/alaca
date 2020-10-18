@@ -19,6 +19,14 @@
         <activity android:name=".BBIActivity"/>
         <activity android:name=".TemperaturesActivity"/>
         <activity android:name=".RuangActivity"/>
+        <activity android:name=".ruang.BolaActivity"/>
+        <activity android:name=".ruang.BalokActivity"/>
+        <activity android:name=".ruang.KubusActivity"/>
+        <activity android:name=".DatarActivity"/>
+        <activity android:name=".ExamActivity"/>
+        <activity android:name=".datar.SegitigaActivity"/>
+        <activity android:name=".datar.PersegiActivity"/>
+        <activity android:name=".datar.PersegiPanjangActivity"/>
     </application>
 
 </manifest>

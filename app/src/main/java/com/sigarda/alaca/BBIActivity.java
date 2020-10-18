@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +24,9 @@ public class BBIActivity extends AppCompatActivity {
     private EditText et_height,et_weight,et_name;
     private TextView hasil,hasil_txt,saran_txt;
     private float weight,height,rumus;
+    private RadioGroup gender;
     private LinearLayout container;
+    private Boolean isMale=true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,15 +40,28 @@ public class BBIActivity extends AppCompatActivity {
         hasil_txt = findViewById(R.id.hasil_txt);
         saran_txt = findViewById(R.id.saran_txt);
         container = findViewById(R.id.container_lyt);
+        gender = findViewById(R.id.gender);
         btn_hitung.setOnClickListener(hitung->{
             hitung();
+        });
+        gender.setOnCheckedChangeListener((radioGroup, i) -> {
+            switch(i){
+                case R.id.male:
+                    isMale=true;
+                    // do operations specific to this selection
+                    break;
+                case R.id.female:
+                    isMale=false;
+                    // do operations specific to this selection
+                    break;
+            }
         });
     }
 
     private void initToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Berat Badan Ideal");
+        getSupportActionBar().setTitle("Berat Badan (BMI)");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Tools.setSystemBarColor(this);
     }
@@ -68,18 +84,34 @@ public class BBIActivity extends AppCompatActivity {
         container.setVisibility(View.VISIBLE);
         String message = "";
         String saran = "";
-        if((rumus>=17)&&(rumus<23)){
-            message="Halo "+et_name.getText()+", berat badan Anda IDEAL";
-            saran="Tetap pertahankan, jaga pola makan dan gaya hidup ya";
-        }else if((rumus>=23)&&(rumus<27)){
-            message="Halo "+et_name.getText()+", berat badan Anda Kegemukan";
-            saran="Wahh, Anda perlu banyak olahraga nih, <br> jangan makan berlebihan ya";
-        }else if(rumus>27){
-            message="Halo "+et_name.getText()+", berat badan Anda Berlebihan";
-            saran="Wahh, Anda perlu lebih banyak olahraga nih, <br>jangan makan berlebihan ya";
+        if(isMale) {
+            if ((rumus >= 17) && (rumus < 23)) {
+                message = "Halo " + et_name.getText() + ", berat badan Anda IDEAL";
+                saran = "Tetap pertahankan, jaga pola makan dan gaya hidup ya";
+            } else if ((rumus >= 23) && (rumus < 27)) {
+                message = "Halo " + et_name.getText() + ", berat badan Anda Kegemukan";
+                saran = "Wahh, Anda perlu banyak olahraga nih, <br> jangan makan berlebihan ya";
+            } else if (rumus > 27) {
+                message = "Halo " + et_name.getText() + ", berat badan Anda Berlebihan";
+                saran = "Wahh, Anda perlu lebih banyak olahraga nih, <br>jangan makan berlebihan ya";
+            } else {
+                message = "Halo " + et_name.getText() + ", berat badan Anda Kurus";
+                saran = "Wahh, Anda perlu banyak makan dengan makanan yang bergizi";
+            }
         }else{
-            message="Halo "+et_name.getText()+", berat badan Anda Kurus";
-            saran="Wahh, Anda perlu banyak makan dengan makanan yang bergizi";
+            if ((rumus >= 18) && (rumus < 25)) {
+                message = "Halo " + et_name.getText() + ", berat badan Anda IDEAL";
+                saran = "Tetap pertahankan, jaga pola makan dan gaya hidup ya";
+            } else if ((rumus >= 25) && (rumus < 27)) {
+                message = "Halo " + et_name.getText() + ", berat badan Anda Kegemukan";
+                saran = "Wahh, Anda perlu banyak olahraga nih, <br> jangan makan berlebihan ya";
+            } else if (rumus > 27) {
+                message = "Halo " + et_name.getText() + ", berat badan Anda Berlebihan";
+                saran = "Wahh, Anda perlu lebih banyak olahraga nih, <br>jangan makan berlebihan ya";
+            } else {
+                message = "Halo " + et_name.getText() + ", berat badan Anda Kurus";
+                saran = "Wahh, Anda perlu banyak makan dengan makanan yang bergizi";
+            }
         }
         hasil.setText(Html.fromHtml("Hasil perhitungan : <b>"+String.format("%.2f", rumus)+"</b>"));
         hasil_txt.setText(Html.fromHtml(message));

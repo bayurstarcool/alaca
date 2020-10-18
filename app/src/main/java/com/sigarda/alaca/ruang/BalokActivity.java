@@ -1,4 +1,4 @@
-package com.sigarda.alaca;
+package com.sigarda.alaca.ruang;
 
 import android.os.Bundle;
 import android.text.Html;
@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.sigarda.alaca.R;
 import com.sigarda.alaca.utils.Tools;
 
 public class BalokActivity extends AppCompatActivity {
@@ -39,7 +40,7 @@ public class BalokActivity extends AppCompatActivity {
     private void initToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Hitung Balok");
+        getSupportActionBar().setTitle("Hitung Segitiga");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Tools.setSystemBarColor(this);
     }
@@ -67,7 +68,7 @@ public class BalokActivity extends AppCompatActivity {
         }
         container.setVisibility(View.VISIBLE);
         double v = (panjang*lebar*tinggi);
-        double l =  (2*panjang+lebar)+(2*panjang*tinggi)+(2*lebar*tinggi);
+        double l =  (panjang+lebar+tinggi);
         luas.setText(Html.fromHtml("<b>"+l+" cm³</b>"));
         volume.setText(Html.fromHtml("<b>"+v+" cm³</b>"));
         return 0;

@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -37,6 +36,7 @@
         android:id="@+id/nested_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/white"
         android:scrollbars="none"
         android:scrollingCache="true">
 
@@ -97,13 +97,13 @@
                                 android:layout_height="35dp"
                                 android:layout_marginTop="@dimen/spacing_smlarge"
                                 android:layout_marginBottom="@dimen/spacing_smlarge"
-                                app:srcCompat="@drawable/badge_reward" />
+                                app:srcCompat="@mipmap/ic_bmi" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_horizontal"
-                                android:text="Berat Badan"
+                                android:text="BMI"
                                 android:textAlignment="center"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                                 android:textColor="@color/grey_90" />
@@ -124,6 +124,7 @@
                     app:cardElevation="0dp">
 
                     <com.balysv.materialripple.MaterialRippleLayout
+                        android:id="@+id/exam"
                         style="@style/RippleStyleBlack"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -141,7 +142,7 @@
                                 android:layout_height="35dp"
                                 android:layout_marginTop="@dimen/spacing_smlarge"
                                 android:layout_marginBottom="@dimen/spacing_smlarge"
-                                app:srcCompat="@drawable/badge_reward" />
+                                app:srcCompat="@mipmap/ic_test_value_calc" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -168,6 +169,7 @@
                     app:cardElevation="0dp">
 
                     <com.balysv.materialripple.MaterialRippleLayout
+                        android:id="@+id/datar"
                         style="@style/RippleStyleBlack"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -185,7 +187,7 @@
                                 android:layout_height="35dp"
                                 android:layout_marginTop="@dimen/spacing_smlarge"
                                 android:layout_marginBottom="@dimen/spacing_smlarge"
-                                app:srcCompat="@drawable/badge_reward" />
+                                app:srcCompat="@mipmap/ic_2d_shapes_calc" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -237,8 +239,7 @@
                                 android:layout_height="35dp"
                                 android:layout_marginTop="@dimen/spacing_smlarge"
                                 android:layout_marginBottom="@dimen/spacing_smlarge"
-                                app:srcCompat="@drawable/badge_reward"
-                                app:tint="@color/indigo_500" />
+                                app:srcCompat="@mipmap/ic_3d_shapes" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -283,8 +284,7 @@
                                 android:layout_height="35dp"
                                 android:layout_marginTop="@dimen/spacing_smlarge"
                                 android:layout_marginBottom="@dimen/spacing_smlarge"
-                                app:srcCompat="@drawable/badge_reward"
-                                app:tint="@color/indigo_500" />
+                                app:srcCompat="@mipmap/ic_temp_calc" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -307,19 +307,34 @@
                 android:layout_width="0dp"
                 android:layout_height="@dimen/spacing_smlarge" />
 
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="200dp"
+                android:gravity="bottom|center"
+                android:text="Aplikasi ini hanya untuk tugas mata kuliah"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="bottom|center"
+                android:text="NIM : 18051204076"
+                android:textColor="@color/black" />
+
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
 
-    <TextView
-        android:id="@+id/textView"
+    <ImageView
+        android:id="@+id/footer_bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="bottom"
-        android:layout_marginBottom="10dp"
-        android:gravity="bottom|center"
-        android:text="Aplikasi ini hanya untuk tugas mata kuliah"
-        android:textColor="@color/black" />
-
+        android:background="@drawable/alaca_bg"
+        app:srcCompat="@drawable/badge_reward" />
 
 </LinearLayout>
